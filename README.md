@@ -1,4 +1,4 @@
 m4l-midular
 ===========
 
-Max for Live modular MIDI processing modules, aka Midular
+Max for Live modular MIDI processing modules, aka Midular. Coming soon :)
