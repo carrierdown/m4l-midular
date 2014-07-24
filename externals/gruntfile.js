@@ -1,16 +1,6 @@
 module.exports = function(grunt) {
 
     grunt.initConfig({
-        // uglify: {
-        //     options: {
-        //         mangle: false,
-        //     },
-        //     prod: {
-        //         files: {
-        //             'js/fm.min.js' : ['js/fm.js']
-        //         }
-        //     }
-        // },
         karma: {
             options: {
                 browsers: ['PhantomJS'],
@@ -31,7 +21,6 @@ module.exports = function(grunt) {
     });
 
     // Load plugins
-    // grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-karma');
 
     //  Tasks
