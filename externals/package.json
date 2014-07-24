@@ -1,0 +1,14 @@
+{
+  "name": "externals",
+  "version": "0.0.1",
+  "description": "JavaScript externals for Max projects",
+  "author": "Knut A. Ruud",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "karma": "0.12.x",
+    "grunt": "~0.4.5",
+    "grunt-karma": "~0.8.3",
+    "karma-jasmine": "~0.1.5",
+    "karma-phantomjs-launcher": "~0.1.4"
+  }
+}
