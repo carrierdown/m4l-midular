@@ -44,10 +44,10 @@ Stores every unique incoming note in a buffer, and plays them back one at a time
 
 ![Rotator](https://raw.github.com/carrierdown/m4l-midular/master/screenshots/Rotator.png)
 
-Stores incoming notes in a rotating 8 note buffer and plays them back using a 8-step sequencer similar to the one in NoteStack.
+Stores incoming notes in a rotating 8 note buffer and plays them back using a 8-step sequencer which is based on an implementation found in a Roland System 100m modular sequencer.
 
 ## SuperPitcher
 
 ![SuperPitcher](https://raw.github.com/carrierdown/m4l-midular/master/screenshots/SuperPitcher.png)
 
-Unlike the MIDI pitch effect included in Live, SuperPitcher instantly pitches any held notes when the pitch parameter is adjusted. This opens up a lot of new possibilities - such as creating crude arpeggios by holding a note and turning the pitch knob back and forth, or setting a lfo to control this knob. SuperPitcher also includes a step modulator which can be used to modulate the pitch in a tempo-synced fashion.
+Unlike the MIDI pitch effect included in Live, SuperPitcher instantly pitches any held notes when the pitch parameter is adjusted. This opens up a lot of new possibilities - such as creating crude arpeggios by holding a note and turning the pitch knob back and forth, or setting a LFO to control this knob. SuperPitcher also includes a step modulator which can be used to modulate the pitch in a tempo-synced fashion.
