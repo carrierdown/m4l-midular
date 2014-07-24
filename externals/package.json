@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "JavaScript externals for Max projects",
   "author": "Knut A. Ruud",
-  "license": "BSD-2-Clause",
+  "license": "CC BY-NC-SA 4.0",
   "devDependencies": {
     "karma": "0.12.x",
     "grunt": "~0.4.5",
