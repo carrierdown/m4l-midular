@@ -8,14 +8,14 @@ Midular is a (growing) set of MIDI effect modules for Max for Live. The modules 
 ## Concept
 The main idea behind Midular is to have a set of modules that operate on their input in various well-defined ways, by mutating and/or complementing what is passed in. Each module focuses on one piece of functionality, such as live quantization of notes, repeating incoming notes, sequencing incoming notes, and so on. By chaining several modules together, one can create a vast array of different MIDI processing chains that can do everything from simple tasks such as echoing or quantizing notes, to more complex setups that can support various forms of algorithmically aided composition. As Ableton Live already ships with a selection of useful MIDI effects, the Midular modules are designed to complement and add to this functionality rather than replacing it, thus you are encouraged to mix and match different types of MIDI plugins to achieve your particular goals.
 
-## Contributing
-The midular modules, in addition to the modules built into Live offer a nice starting point for doing lots of fun MIDI processing, but there are lots of possibilities that haven't been explored yet, and there probably are fun ways in which the existing modules could be expanded upon to offer more possibilities. If you're interested in contributing to this collection, please get in [**touch**](http://www.upland.no/contact).
-
 ## Support
 These modules are given away for free. If you find them useful, I would greatly appreciate it if you support me by following my SoundCloud at [**https://soundcloud.com/upland**](https://soundcloud.com/upland).
 
 ## License
 Midular is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/) license.
+
+## Contributing
+The midular modules, in addition to the modules built into Live offer a nice starting point for doing lots of fun MIDI processing, but there are lots of possibilities that haven't been explored yet, and there probably are fun ways in which the existing modules could be expanded upon to offer more possibilities. If you're interested in contributing to this collection, please get in [**touch**](http://www.upland.no/contact).
 
 The modules
 ===========
