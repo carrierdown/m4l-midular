@@ -55,8 +55,9 @@ Stores incoming notes in a rotating 8 note buffer and plays them back using a 8-
 
 Unlike the MIDI pitch effect included in Live, SuperPitcher instantly pitches any held notes when the pitch parameter is adjusted. This opens up a lot of new possibilities - such as creating crude arpeggios by holding a note and turning the pitch knob back and forth, or setting a LFO to control this knob. SuperPitcher also includes a step modulator which can be used to modulate the pitch in a tempo-synced fashion.
 
+___
 
-    Copyright © 2014 Knut Andreas Ruud
+Copyright © 2014 Knut Andreas Ruud
     
     Midular is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
