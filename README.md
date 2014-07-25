@@ -17,6 +17,9 @@ Midular is licensed under a [Creative Commons Attribution-NonCommercial-ShareAli
 ## Contributing
 The midular modules, in addition to the modules built into Live offer a nice starting point for doing lots of fun MIDI processing, but there are lots of possibilities that haven't been explored yet, and there probably are fun ways in which the existing modules could be expanded upon to offer more possibilities. If you're interested in contributing to this collection, please get in [**touch**](http://www.upland.no/contact).
 
+## Download
+You can download all current modules in one handy zip from [here](https://github.com/carrierdown/m4l-midular/releases/tag/v1.0).
+
 The modules
 ===========
 
