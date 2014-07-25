@@ -11,14 +11,14 @@ The main idea behind Midular is to have a set of modules that operate on their i
 ## Support
 If you find these modules useful, I would greatly appreciate it if you support me by following my SoundCloud at [**https://soundcloud.com/upland**](https://soundcloud.com/upland). Thanks.
 
-## License
-Midular is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/) license.
+## Download
+You can download all current modules in one handy zip from [here](https://github.com/carrierdown/m4l-midular/releases/tag/v1.0).
 
 ## Contributing
 The midular modules, in addition to the modules built into Live offer a nice starting point for doing lots of fun MIDI processing, but there are lots of possibilities that haven't been explored yet, and there probably are fun ways in which the existing modules could be expanded upon to offer more possibilities. If you're interested in contributing to this collection, please get in [**touch**](http://www.upland.no/contact).
 
-## Download
-You can download all current modules in one handy zip from [here](https://github.com/carrierdown/m4l-midular/releases/tag/v1.0).
+## License
+Midular is licensed under the [GPL license](http://www.gnu.org/copyleft/gpl.html).
 
 The modules
 ===========
@@ -54,3 +54,19 @@ Stores incoming notes in a rotating 8 note buffer and plays them back using a 8-
 ![SuperPitcher](https://raw.github.com/carrierdown/m4l-midular/master/screenshots/SuperPitcher.png)
 
 Unlike the MIDI pitch effect included in Live, SuperPitcher instantly pitches any held notes when the pitch parameter is adjusted. This opens up a lot of new possibilities - such as creating crude arpeggios by holding a note and turning the pitch knob back and forth, or setting a LFO to control this knob. SuperPitcher also includes a step modulator which can be used to modulate the pitch in a tempo-synced fashion.
+
+
+Copyright © 2014 Knut Andreas Ruud
+
+Midular is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Midular is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Midular.  If not, see <http://www.gnu.org/licenses/>.
