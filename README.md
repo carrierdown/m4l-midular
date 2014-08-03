@@ -55,6 +55,12 @@ Stores incoming notes in a rotating 8 note buffer and plays them back using a 8-
 
 Unlike the MIDI pitch effect included in Live, SuperPitcher instantly pitches any held notes when the pitch parameter is adjusted. This opens up a lot of new possibilities - such as creating crude arpeggios by holding a note and turning the pitch knob back and forth, or setting a LFO to control this knob. SuperPitcher also includes a step modulator which can be used to modulate the pitch in a tempo-synced fashion.
 
+## VelocityFilter
+
+![VelocityFilter]
+
+Compares the incoming Velocity value with the Constant value. There are two modes: "Vel >= C" which is like a High Pass filter, and "Vel <= C" which is like a Low Pass filter. If the Velocity passes the comparison the note is transmitted, otherwise the note is blocked. Use this on complex percussion sequences to filter out ghost (low velocity) drum hits as a way of breaking down the beat without needing extra clips for variation.
+
 ___
 
 Copyright © 2014 Knut Andreas Ruud
