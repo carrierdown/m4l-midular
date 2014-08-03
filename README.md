@@ -59,7 +59,7 @@ Unlike the MIDI pitch effect included in Live, SuperPitcher instantly pitches an
 
 ![VelocityFilter](https://raw.github.com/carrierdown/m4l-midular/master/screenshots/VelocityFilter.png)
 
-Compares the incoming Velocity value with the Constant value. There are two modes: "Greater than" which is like a High Pass filter, and "Less than" which is like a Low Pass filter. If the Velocity passes the comparison the note is transmitted, otherwise the note is blocked. One example usage is filtering out ghost (low velocity) drum hits on complex percussion sequences as a way of breaking down the beat without needing extra clips for variation.
+Filters incoming notes based on velocity, such that notes with a velocity _greater than_ or _less than_ the given velocity value are passed through. The former can be seen as a high pass filter while the latter can be seen as a low pass filter. One example usage is filtering out ghost (low velocity) drum hits on complex percussion sequences as a way of breaking down the beat without needing extra clips for variation.
 
 ___
 
