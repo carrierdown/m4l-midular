@@ -14,9 +14,6 @@ The main idea behind Midular is to have a set of modules that operate on their i
 ## Support
 If you find these modules useful, I would greatly appreciate it if you support me by following my SoundCloud at [**https://soundcloud.com/upland**](https://soundcloud.com/upland). Thanks!
 
-## Download
-You can download all current modules in one handy zip from [here](https://github.com/carrierdown/m4l-midular/releases/tag/v1.0).
-
 ## Contributing
 The midular modules, in addition to the modules built into Live offer a nice starting point for doing lots of fun MIDI processing, but there are lots of possibilities that haven't been explored yet, and there probably are fun ways in which the existing modules could be expanded upon to offer more possibilities. If you're interested in contributing to this collection, please get in [**touch**](http://www.upland.no/contact).
 
