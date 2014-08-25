@@ -5,16 +5,22 @@ module.exports = function(grunt) {
             options: {
                 browsers: ['PhantomJS'],
                 frameworks: ['jasmine'],
+                reporters: ['story'],
                 singleRun: true
             },
             noteclock: {
                 options: {
-                    files: ['js/common/*.js', 'js/noteclock.js', 'js/noteclock.spec.js'],
+                    files: ['js/common/*.js', 'js/noteclock.js', 'js/noteclock.spec.js']
                 }
             },
             notepitcher: {
                 options: {
-                    files: ['js/common/*.js', 'js/notepitcher.js', 'js/notepitcher.spec.js'],
+                    files: ['js/common/*.js', 'js/notepitcher.js', 'js/notepitcher.spec.js']
+                }
+            },
+            buffer: {
+                options: {
+                    files: ['js/common/*.js', 'js/buffer.js', 'js/buffer.spec.js']
                 }
             }
         }
@@ -24,5 +30,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-karma');
 
     //  Tasks
-    grunt.registerTask('default', ['karma:noteclock', 'karma:notepitcher']);
+    grunt.registerTask('default', ['karma:noteclock', 'karma:notepitcher', 'karma:buffer']);
 };
