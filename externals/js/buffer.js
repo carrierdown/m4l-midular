@@ -15,10 +15,10 @@ inlets = 2;
 outlets = 2;
 
 var buffer = [],
-	mode = 0,
+	mode = 0, // up
 	playHead = 0,
 	currentDirection = 1,
-	MAX_BUFFER_SIZE = 100; // up
+	MAX_BUFFER_SIZE = 100;
 
 function ensureRange(val, min, max) {
 	if (val < min) return min;
@@ -30,13 +30,6 @@ function wrapRange(val, min, max) {
 	if (val < min) return max;
 	if (val > max) return min;
 	return val;
-}
-
-function containRange(val, min, max) {
-	var val2 = wrapRange(val, min, max);
-	if (val > val2) {
-
-	}
 }
 
 function bufferContainsNote(note) {
