@@ -41,7 +41,7 @@ Acts like a selective MIDI echo, repeating a given note (e.g. the note C in any 
 
 ![Buffer](https://raw.github.com/carrierdown/m4l-midular/master/screenshots/Buffer.png)
 
-Stores every unique incoming note in a buffer, and plays them back one at a time in a cyclical fashion. 
+Stores every unique incoming note in a buffer, and plays them back one at a time. Playback is triggered every time a note is received, and it will also be stored in the buffer if it hasn't already. Playback cycles through the stored notes in one of several ways, including up, down, up/down, and random.
 
 ## Rotator
 
@@ -60,6 +60,18 @@ Unlike the MIDI pitch effect included in Live, SuperPitcher instantly pitches an
 ![VelocityFilter](https://raw.github.com/carrierdown/m4l-midular/master/screenshots/VelocityFilter.png)
 
 Filters incoming notes based on velocity, such that notes with a velocity _greater than_ or _less than_ the given velocity value are passed through. The former can be seen as a high pass filter while the latter can be seen as a low pass filter. One example usage is filtering out ghost (low velocity) drum hits on complex percussion sequences as a way of breaking down the beat without needing extra clips for variation.
+
+## OneNote
+
+![OneNote](https://aw.github.com/carrierdown/m4l-midular/master/screenshots/OneNote.png)
+
+A very simple utility module which simply transforms any note it receives into the specified note. It can be quite useful when combined with other modules, and remember that the output note can be changed on the fly (or automated).
+
+## Timer
+
+![Timer](https://aw.github.com/carrierdown/m4l-midular/master/screenshots/Timer.png)
+
+Measures the elapsed time (in milliseconds) between incoming notes, and outputs a note (either a fixed note or the note received) if the elapsed time is either greater than or less than the specified treshold. It can be seen as a sort of context sensitive note filter, and can be very handy for creating several midi patterns based on the same stream of midi notes.
 
 ___
 
