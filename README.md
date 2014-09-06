@@ -63,13 +63,13 @@ Filters incoming notes based on velocity, such that notes with a velocity _great
 
 ## OneNote
 
-![OneNote](https://aw.github.com/carrierdown/m4l-midular/master/screenshots/OneNote.png)
+![OneNote](https://raw.github.com/carrierdown/m4l-midular/master/screenshots/OneNote.png)
 
 A very simple utility module which simply transforms any note it receives into the specified note. It can be quite useful when combined with other modules, and remember that the output note can be changed on the fly (or automated).
 
 ## Timer
 
-![Timer](https://aw.github.com/carrierdown/m4l-midular/master/screenshots/Timer.png)
+![Timer](https://raw.github.com/carrierdown/m4l-midular/master/screenshots/Timer.png)
 
 Measures the elapsed time (in milliseconds) between incoming notes, and outputs a note (either a fixed note or the note received) if the elapsed time is either greater than or less than the specified treshold. It can be seen as a sort of context sensitive note filter, and can be very handy for creating several midi patterns based on the same stream of midi notes.
 
