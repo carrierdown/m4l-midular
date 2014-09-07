@@ -5,8 +5,8 @@ Max for Live modular MIDI processing modules, aka Midular.
 
 Midular is a (growing) set of MIDI effect modules for Max for Live. The modules can be chained together in a modular fashion to form any number of effect chains. Used in isolation, they can act as quick problem solvers, such as quantizing notes in realtime, or delaying a certain set of notes. However, it is when multiple modules are chained together that the power of the modular aspect becomes apparent. To see some examples of the modules in action, check out these two videos: [Midular example 1](https://www.youtube.com/watch?v=vW2kJZrd2Mc&list=UUQ-sL5VFlVHYjup_iILRnug) | [Midular example 2](https://www.youtube.com/watch?v=JtNl9c_ixow&index=2&list=UUQ-sL5VFlVHYjup_iILRnug)
 
-## Update August 7th: Version 1.1 is released
-Go *[here](https://github.com/carrierdown/m4l-midular/releases/tag/v1.1)* for details about the latest version of Midular!
+## Update September 8th: Version 1.2 is released
+Go *[here](https://github.com/carrierdown/m4l-midular/releases/tag/v1.2)* for details about the latest version of Midular!
 
 ## Concept
 The main idea behind Midular is to have a set of modules that operate on their input in various well-defined ways, by mutating and/or complementing what is passed in. Each module focuses on one piece of functionality, such as live quantization of notes, repeating incoming notes, sequencing incoming notes, and so on. By chaining several modules together, one can create a vast array of different MIDI processing chains that can do everything from simple tasks such as echoing or quantizing notes, to more complex setups that can support various forms of algorithmically aided composition. As Ableton Live already ships with a selection of useful MIDI effects, the Midular modules are designed to complement and add to this functionality rather than replacing it, thus you are encouraged to mix and match different types of MIDI plugins to achieve your particular goals.
