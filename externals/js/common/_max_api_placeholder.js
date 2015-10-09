@@ -3,3 +3,7 @@
 window.outlet = function(outletNumber, value) {
 	// does nothing
 };
+
+window.notifyclients = function() {
+	// does nothing
+};
