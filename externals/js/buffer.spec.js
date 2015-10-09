@@ -1,10 +1,10 @@
 describe("buffer tests", function() {
 
 	/*
-		Inlets: 
-			0: ints (0-127) are stored, 
-				the string 'next' triggers a new note, 
-				the string 'length' outputs current buffer length in second outlet, 
+		Inlets:
+			0: ints (0-127) are stored,
+				the string 'next' triggers a new note,
+				the string 'length' outputs current buffer length in second outlet,
 				the string 'clear' clears the current buffer
 			1: mode (0 - up, 1 - down, 2 - up/down, 3 - random)
 
@@ -30,9 +30,9 @@ describe("buffer tests", function() {
 		});
 
 		it("should output an updated length each time a value is stored", function() {
-			expect(window.outlet).toHaveBeenCalledWith(1, 1);
-			expect(window.outlet).toHaveBeenCalledWith(1, 2);
-			expect(window.outlet).toHaveBeenCalledWith(1, 3);
+			expect(window.outlet).toHaveBeenCalledWith(2, 1);
+			expect(window.outlet).toHaveBeenCalledWith(2, 2);
+			expect(window.outlet).toHaveBeenCalledWith(2, 3);
 		});
 
 		it("should not store duplicates of the same note value", function() {
@@ -147,8 +147,8 @@ describe("buffer tests", function() {
 		});
 
 		it("the buffer will stop storing notes at length 100", function() {
-			expect(window.outlet).not.toHaveBeenCalledWith(1, 101);
-			expect(window.outlet).toHaveBeenCalledWith(1, 100);
+			expect(window.outlet).not.toHaveBeenCalledWith(2, 101);
+			expect(window.outlet).toHaveBeenCalledWith(2, 100);
 		});
 	});
 });
