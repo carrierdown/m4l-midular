@@ -22,6 +22,11 @@ module.exports = function(grunt) {
                 options: {
                     files: ['js/common/*.js', 'js/buffer.js', 'js/buffer.spec.js']
                 }
+            },
+            rotator: {
+            	options: {
+            		files: ['js/common/*.js', 'js/rotator.js', 'js/rotator.spec.js']
+            	}
             }
         }
     });
@@ -30,5 +35,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-karma');
 
     //  Tasks
-    grunt.registerTask('default', ['karma:noteclock', 'karma:notepitcher', 'karma:buffer']);
+    grunt.registerTask('default', ['karma:noteclock', 'karma:notepitcher', 'karma:buffer', 'karma:rotator']);
 };
