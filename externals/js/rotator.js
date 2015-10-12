@@ -13,7 +13,12 @@
 
 	Outlets:
 		0: note pitch and velocity,
-		1: length of sequence when updated
+		1: length <sequence length> when updated,
+			 note <position> <pitch> when updated via record mode
+
+	 Considering adding:
+		 Live transpose (sequence is pitched according to incoming note)
+		 Playback modes forward, reverse, forward/reverse, back and forth intertwined, etc...
 */
 
 inlets = 9;
@@ -36,7 +41,8 @@ var currentlyPlayingNote = -1,
 		},
 		OutletIndex = {
 			NoteOut: 0,
-			LengthOut: 1
+			LengthOut: 1,
+			InfoOut: 1
 		};
 
 function initSettings() {
@@ -74,10 +80,11 @@ function setvalueof(state) {
 	} else {
 		buffer = JSON.parse(state);
 	}
-	outlet(OutletIndex.LengthOut, settings.length);
+	outlet(OutletIndex.LengthOut, 'length', settings.length);
 }
 
 function bang() {
+	if (inlet !== 0) return;
 	tick();
 }
 
@@ -96,17 +103,21 @@ function tick()
 			}
 			break;
 		case Mode.Hold:
-			_noteOff();
 			if (transport.delayIndex === 0) {
+				_noteOff();
 				_noteOn();
 			}
 			break;
 		case Mode.Repeat:
+		// console.log('off');
 			_noteOff();
+		// console.log('on');
 			_noteOn();
 			// emit note
+			break;
 		case Mode.Mute:
 			_noteOff();
+			break;
 	}
 	_advanceTransport();
 }
@@ -114,9 +125,10 @@ function tick()
 function note(pitch) {
 	if (inlet === 0) {
 		settings.notes[settings.recordPosition] = pitch;
+		outlet(OutletIndex.InfoOut, 'note', settings.recordPosition + 1, pitch);
 		if (settings.length < 8) {
 			settings.length++;
-			outlet(OutletIndex.LengthOut, settings.length);
+			outlet(OutletIndex.LengthOut, 'length', settings.length);
 		}
 		settings.recordPosition = (settings.recordPosition + 1) % 8;
 		notifyclients();
@@ -144,6 +156,12 @@ function mode(modeValue) {
 function length(value) {
 	if (inlet !== 0) return;
 	length = value;
+}
+
+function reset() {
+	transport.position = 0;
+	transport.delayIndex = 0;
+	_noteOff();
 }
 
 function purge() {

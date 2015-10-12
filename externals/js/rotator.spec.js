@@ -13,7 +13,8 @@
 
 	Outlets:
 		0: note pitch and velocity,
-		1: length of sequence when updated
+		1: length <sequence length> when updated,
+			 note <position> <pitch> when updated via record mode
 */
 
 describe("rotator tests", function() {
@@ -34,14 +35,13 @@ describe("rotator tests", function() {
 			delay(4);
 			inlet = 4;
 			delay(5);
-			dump(settings.delays);
+			inlet = 0;
 		});
 
 		it("Default play mode (single) should output note at the start of each step followed by note off on the next step", function() {
-			expect(window.outlet).toHaveBeenCalledWith(1, 1);
-			expect(window.outlet).toHaveBeenCalledWith(1, 2);
-			expect(window.outlet).toHaveBeenCalledWith(1, 3);
-			expect(window.outlet).toHaveBeenCalledWith(1, 4);
+			reset();
+			window.outlet.reset();
+
 			bang();
 			expect(window.outlet).toHaveBeenCalledWith(0, 60, 127);
 			window.outlet.reset();
@@ -76,6 +76,125 @@ describe("rotator tests", function() {
 
 			bang();
 			expect(window.outlet).toHaveBeenCalledWith(0, 60, 127);
+		});
+
+		it("Play mode hold should output held notes throughout the duration of each step", function() {
+			reset();
+			inlet = 1;
+			mode(2);
+			inlet = 2;
+			mode(2);
+			inlet = 0;
+			window.outlet.reset();
+
+			bang();
+			expect(window.outlet).toHaveBeenCalledWith(0, 60, 127);
+			expect(window.outlet.calls.length).toEqual(1);
+			window.outlet.reset();
+
+			bang();
+			expect(window.outlet).toHaveBeenCalledWith(0, 60, 0);
+			expect(window.outlet).toHaveBeenCalledWith(0, 61, 127);
+			expect(window.outlet.calls.length).toEqual(2);
+			window.outlet.reset();
+			bang();
+			bang();
+			expect(window.outlet.calls.length).toEqual(0);
+			// expect(window.outlet).toHaveBeenCalledWith(0, 61, 127);
+
+			bang();
+			expect(window.outlet).toHaveBeenCalledWith(0, 61, 0);
+			expect(window.outlet).toHaveBeenCalledWith(0, 62, 127);
+			expect(window.outlet.calls.length).toEqual(2);
+			// window.outlet.reset();
+		});
+
+		it("Play mode repeat should output notes for each step", function() {
+			reset();
+			inlet = 1;
+			mode(Mode.Repeat);
+			inlet = 2;
+			mode(Mode.Repeat);
+			inlet = 0;
+			window.outlet.reset();
+
+			bang();
+			expect(window.outlet).toHaveBeenCalledWith(0, 60, 127);
+			expect(window.outlet.calls.length).toEqual(1);
+			window.outlet.reset();
+
+			bang();
+			expect(window.outlet).toHaveBeenCalledWith(0, 60, 0);
+			expect(window.outlet).toHaveBeenCalledWith(0, 61, 127);
+			expect(window.outlet.calls.length).toEqual(2);
+			window.outlet.reset();
+			bang();
+			expect(window.outlet).toHaveBeenCalledWith(0, 61, 0);
+			expect(window.outlet).toHaveBeenCalledWith(0, 61, 127);
+			expect(window.outlet.calls.length).toEqual(2);
+			window.outlet.reset();
+			bang();
+			expect(window.outlet).toHaveBeenCalledWith(0, 61, 0);
+			expect(window.outlet).toHaveBeenCalledWith(0, 61, 127);
+			expect(window.outlet.calls.length).toEqual(2);
+			window.outlet.reset();
+			bang();
+			expect(window.outlet).toHaveBeenCalledWith(0, 61, 0);
+			expect(window.outlet).toHaveBeenCalledWith(0, 62, 127);
+			expect(window.outlet.calls.length).toEqual(2);
+			window.outlet.reset();
+		});
+
+		it("Play mode mute should not output notes, only note off at start if needed ", function() {
+			reset();
+			inlet = 1;
+			mode(Mode.Single);
+			inlet = 2;
+			mode(Mode.Mute);
+			inlet = 0;
+			window.outlet.reset();
+
+			bang();
+			expect(window.outlet).toHaveBeenCalledWith(0, 60, 127);
+			expect(window.outlet.calls.length).toEqual(1);
+			window.outlet.reset();
+
+			bang();
+			expect(window.outlet).toHaveBeenCalledWith(0, 60, 0);
+			expect(window.outlet.calls.length).toEqual(1);
+			window.outlet.reset();
+			bang();
+			bang();
+
+			bang();
+			expect(window.outlet).toHaveBeenCalledWith(0, 62, 127);
+			expect(window.outlet.calls.length).toEqual(1);
+			window.outlet.reset();
+		});
+	});
+
+	describe("Testing live record mode", function() {
+		it("Outlet 1 should output correct info when using live record mode", function() {
+			settings.length = 0;
+			settings.recordPosition = 0;
+			spyOn(window, 'outlet');
+			inlet = 0;
+			note(48);
+			expect(window.outlet).toHaveBeenCalledWith(OutletIndex.InfoOut, 'note', 1, 48);
+			expect(window.outlet).toHaveBeenCalledWith(OutletIndex.LengthOut, 'length', 1);
+			window.outlet.reset();
+			note(49);
+			expect(window.outlet).toHaveBeenCalledWith(OutletIndex.LengthOut, 'length', 2);
+			expect(window.outlet).toHaveBeenCalledWith(OutletIndex.InfoOut, 'note', 2, 49);
+			window.outlet.reset();
+			note(50);
+			expect(window.outlet).toHaveBeenCalledWith(OutletIndex.LengthOut, 'length', 3);
+			expect(window.outlet).toHaveBeenCalledWith(OutletIndex.InfoOut, 'note', 3, 50);
+			window.outlet.reset();
+			note(51);
+			expect(window.outlet).toHaveBeenCalledWith(OutletIndex.LengthOut, 'length', 4);
+			expect(window.outlet).toHaveBeenCalledWith(OutletIndex.InfoOut, 'note', 4, 51);
+			window.outlet.reset();
 		});
 	});
 });
