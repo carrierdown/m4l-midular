@@ -90,7 +90,7 @@ function bang() {
 
 function tick()
 {
-	if (length === 0) {
+	if (settings.length === 0) {
 		return;
 	}
 	switch (settings.modes[transport.position]) {
@@ -128,8 +128,8 @@ function note(pitch) {
 		outlet(OutletIndex.InfoOut, 'note', settings.recordPosition + 1, pitch);
 		if (settings.length < 8) {
 			settings.length++;
-			outlet(OutletIndex.LengthOut, 'length', settings.length);
 		}
+		outlet(OutletIndex.LengthOut, 'length', settings.length);
 		settings.recordPosition = (settings.recordPosition + 1) % 8;
 		notifyclients();
 	}
@@ -155,13 +155,26 @@ function mode(modeValue) {
 
 function length(value) {
 	if (inlet !== 0) return;
-	length = value;
+	settings.length = value;
+	outlet(OutletIndex.LengthOut, 'length', settings.length);
 }
 
 function reset() {
 	transport.position = 0;
 	transport.delayIndex = 0;
 	_noteOff();
+}
+
+function clear() {
+	var i;
+	settings = initSettings();
+	for (i=1; i<=8; i++) {
+		outlet(OutletIndex.InfoOut, 'note', i, settings.notes[i-1]);
+		outlet(OutletIndex.LengthOut, 'length', settings.length);
+		outlet(OutletIndex.InfoOut, 'delay', i, settings.delays[i-1]);
+		outlet(OutletIndex.InfoOut, 'mode', i, settings.modes[i-1]);
+	}
+	reset();
 }
 
 function purge() {
