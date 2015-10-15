@@ -5,8 +5,13 @@ Max for Live modular MIDI processing modules, aka Midular.
 
 Midular is a (growing) set of MIDI effect modules for Max for Live. The modules can be chained together in a modular fashion to form any number of effect chains. Used in isolation, they can act as quick problem solvers, such as quantizing notes in realtime, or delaying a certain set of notes. However, it is when multiple modules are chained together that the power of the modular aspect becomes apparent. To see some examples of the modules in action, check out these two videos: [Midular example 1](https://www.youtube.com/watch?v=vW2kJZrd2Mc&list=UUQ-sL5VFlVHYjup_iILRnug) | [Midular example 2](https://www.youtube.com/watch?v=JtNl9c_ixow&index=2&list=UUQ-sL5VFlVHYjup_iILRnug)
 
-## Update September 8th: Version 1.2 is released
-Go *[here](https://github.com/carrierdown/m4l-midular/releases/tag/v1.2)* for details about the latest version of Midular!
+## Update October 15th: Version 1.3 is released
+### Changes since version 1.2
+
+- **Buffer** now saves its **state with the Live set**, and **handling of note offs has been improved** so that Buffer responds to the actual notes being played and doesn't require setting a specific note length in advance.
+- **Rotator** has been updated to become a much more capable sequencer. In addition to the live record mode already present, you can now **change the sequence or its length** on the fly, and also choose between **4 different play modes for each step**. The current implementation is basically derived from the Intellijel Metropolis eurorack module. Finally, Rotator now also stores its **state with the Live set**.
+
+### *[Download it here!](https://github.com/carrierdown/m4l-midular/releases/tag/v1.3)*
 
 ## Concept
 The main idea behind Midular is to have a set of modules that operate on their input in various well-defined ways, by mutating and/or complementing what is passed in. Each module focuses on one piece of functionality, such as live quantization of notes, repeating incoming notes, sequencing incoming notes, and so on. By chaining several modules together, one can create a vast array of different MIDI processing chains that can do everything from simple tasks such as echoing or quantizing notes, to more complex setups that can support various forms of algorithmically aided composition. As Ableton Live already ships with a selection of useful MIDI effects, the Midular modules are designed to complement and add to this functionality rather than replacing it, thus you are encouraged to mix and match different types of MIDI plugins to achieve your particular goals.
@@ -47,7 +52,7 @@ Stores every unique incoming note in a buffer, and plays them back one at a time
 
 ![Rotator](https://raw.github.com/carrierdown/m4l-midular/master/screenshots/Rotator.png)
 
-Stores incoming notes in a rotating 8 note buffer and plays them back using a 8-step sequencer which is based on an implementation found in a Roland System 100m modular sequencer.
+A sequencer module based on the Intellijel Metropolis eurorack module. You can record/edit sequences, and set separate lengths and play modes for each step.
 
 ## SuperPitcher
 
@@ -76,16 +81,16 @@ Measures the elapsed time (in milliseconds) between incoming notes, and outputs 
 ___
 
 Copyright © 2014 Knut Andreas Ruud
-    
+
     Midular is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
-    
+
     Midular is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-    
+
     You should have received a copy of the GNU General Public License
     along with Midular.  If not, see <http://www.gnu.org/licenses/>.
