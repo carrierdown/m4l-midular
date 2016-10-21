@@ -5,7 +5,7 @@ Max for Live modular MIDI processing modules, aka Midular.
 
 Midular is a (growing) set of MIDI effect modules for Max for Live. The modules can be chained together in a modular fashion to form any number of effect chains. Used in isolation, they can act as quick problem solvers, such as quantizing notes in realtime, or delaying a certain set of notes. However, it is when multiple modules are chained together that the power of the modular aspect becomes apparent. To see some examples of the modules in action, check out these two videos: [Midular example 1](https://www.youtube.com/watch?v=vW2kJZrd2Mc&list=UUQ-sL5VFlVHYjup_iILRnug) | [Midular example 2](https://www.youtube.com/watch?v=JtNl9c_ixow&index=2&list=UUQ-sL5VFlVHYjup_iILRnug)
 
-## Update October 15th: Version 1.3 is released
+## Update 15 October 2015: Version 1.3 is released
 ### Changes since version 1.2
 
 - **Buffer** now saves its **state with the Live set**, and **handling of note offs has been improved** so that Buffer responds to the actual notes being played and doesn't require setting a specific note length in advance.
